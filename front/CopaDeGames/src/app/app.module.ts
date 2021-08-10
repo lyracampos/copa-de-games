@@ -7,13 +7,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CampeonatoComponent } from './components/campeonato/campeonato.component';
 import { CampeoesComponent } from './components/campeoes/campeoes.component';
-
+import { FaseSelecaoComponent } from './components/fase-selecao/fase-selecao.component';
+import { ResultadoFinalComponent } from './components/resultado-final/resultado-final.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CampeonatoComponent,
-    CampeoesComponent
+    CampeoesComponent,
+    FaseSelecaoComponent,
+    ResultadoFinalComponent,
   ],
   imports: [
     BrowserModule,

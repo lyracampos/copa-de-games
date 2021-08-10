@@ -15,8 +15,8 @@ export class CampeonatoComponent implements OnInit {
   competidoresSelecionados: Array<string> = [];
   totalCompetidoresSelecionados: number = 0;
   selecionouCompetidores: boolean = true; 
-  
   showCount:boolean = false;
+
   constructor(private copaDeGamesService: CopaDeGamesService, private router: Router) { }
 
   ngOnInit(): void {

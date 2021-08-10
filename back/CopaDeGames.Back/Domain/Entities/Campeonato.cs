@@ -8,8 +8,8 @@ namespace CopaDeGames.Back.Domain.Entities
     {
         public Guid Id { get; private set; }
         public List<Competidor> Competidores { get; private set; }
-        public Competidor Campeao { get; private set; }
-        public Competidor ViceCampeao { get; private set; }
+        public Vencedor Campeao { get; private set; }
+        public Vencedor ViceCampeao { get; private set; }
 
         public Campeonato(List<Competidor> competidores)
         {
@@ -34,8 +34,9 @@ namespace CopaDeGames.Back.Domain.Entities
 
                 if (partidas.Count == 1)
                 {
-                    Campeao = partidas.FirstOrDefault().Vencedor;
-                    ViceCampeao = partidas.FirstOrDefault().Perdedor;
+                    var ultimaPartida = partidas.FirstOrDefault();
+                    Campeao = new Vencedor(ultimaPartida.Vencedor.Titulo, ultimaPartida.Vencedor.UrlImagem);
+                    ViceCampeao = new Vencedor(ultimaPartida.Perdedor.Titulo, ultimaPartida.Perdedor.UrlImagem);
                 }
             }
         }

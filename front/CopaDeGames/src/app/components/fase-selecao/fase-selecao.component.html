@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 mb-2">
+            <div class="bg-light p-4 rounded mt-3 text-center">
+                <label>Challenge Games</label>
+                <h3>Fase de seleção</h3>
+                <p><small>Selecione 8 games que você deseja que entrem na competição e depois precione o botão Gerar Meu Campeonato para prosseguir.</small></p>
+              </div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-6">
+            <div *ngIf="totalSelecionado <= 8">
+                <p class="text text-dark">jogos selecionados {{totalSelecionado}}</p>
+              </div>
+              <div *ngIf="totalSelecionado > 8">
+                <p class="text text-danger">Você ultrapassou a quantidade de jogos. Selecione apenas 8.</p>
+              </div>
+        </div>
+        <div class="col-md-6 text-right">
+            <button class="btn btn-primary pull-right" (click)="gerarCampeonato()" [disabled]="!validado">gerar meu campeonato</button>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="card-group">
+            <div *ngFor="let competidor of competidores">
+                <div class="card rounded m-2 col-4" style="width: 18rem;">
+                    <img class="card-img-top img-fluid" [src]="competidor.urlImagem" [alt]="competidor.titulo">
+                    <div class="card-body">
+                        <h6 class="card-title">{{ competidor.titulo }}</h6>
+                        <label style="cursor: pointer;"><input type="checkbox" (change)="selecionarCompetidor($event, competidor.id)" /> selecionar para competir</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -32,7 +32,7 @@ namespace CopaDeGames.Back.Domain.Services
             campeonato.IniciarCompeticao();
 
             // salva campeonato no banco
-            await _campeonatoRepository.Adicionar(new HistoricoCampeonato(campeonato.Id, campeonato.Campeao.Titulo, campeonato.ViceCampeao.Titulo));
+            await _campeonatoRepository.Adicionar(new HistoricoCampeonato(campeonato.Id, campeonato.Campeao.Titulo, campeonato.Campeao.UrlImagem, campeonato.ViceCampeao.Titulo, campeonato.ViceCampeao.UrlImagem));
 
             return campeonato;
         }

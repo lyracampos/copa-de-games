@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 mb-2">
+            <div class="bg-light p-4 rounded mt-3 text-center">
+                <label>Campeonato de Games</label>
+                <h3>Resultado final</h3>
+                <p>Veja o resultado final do campeonato de game de forma simples e rápiada</p>
+              </div>
+        </div>
+    </div>
+    <br />
+    <div class="card">
+        <div class="row no-gutters">
+            <div class="col-auto">
+                <img src="assets/img/medalha-de-ouro.jpeg" style="width: 90px; height: auto;" class="img-fluid" alt="Medalha de ouro">
+            </div>
+            <div class="col">
+                <div class="card-block px-2">
+                    <h6 class="card-title">{{ campeonato.campeao }}</h6>
+                </div>
+            </div>
+            <div class="col-auto">
+                <img src="{{ campeonato.campeaoImg }}" style="width: 90px; height: auto;" class="img-fluid" alt="Foto do jogo campeão">
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="card">
+        <div class="row no-gutters">
+            <div class="col-auto">
+                <img src="assets/img/medalha-de-prata.jpeg" style="width: 90px; height: auto;" class="img-fluid" alt="Medalha de prata">
+            </div>
+            <div class="col">
+                <div class="card-block px-2">
+                    <h6 class="card-title">{{ campeonato.viceCampeao }}</h6>
+                </div>
+            </div>
+            <div class="col-auto">
+                <img src="{{ campeonato.viceCampeaoImg }}" style="width: 90px; height: auto;" class="img-fluid" alt="Foto do jogo campeão">
+            </div>
+        </div>
+  </div>
+    <br />
+    <a [routerLink]="['/fase-selecao']" title="voltar para competição" class="btn btn-primary">
+        <span class="glyphicon glyphicon-search"></span>Voltar para competição
+      </a>
+</div>
