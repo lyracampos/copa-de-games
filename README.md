@@ -30,6 +30,15 @@ dotnet restore
 dotnet test
 ```
 
+### pontos para melhorar
+- criar testes para frontend
+- disponibilizar dockerfile e docker compose
+
+### agradecimentos
+muito obrigado pela oportunidade. A Lambda é uma empresa que sempre sonhei em trabalhar e só de participar do teste já é uma parada que me da muita satisfação. espero que vocês consuigam rodar a aplicação sem problemas e qualquer coisa fico à disposição.
+
+obrigado pessoal :)
+
 ### author
 [Guilherme Lyra](https://github.com/lyracampos "Guilherme Lyra")
 
