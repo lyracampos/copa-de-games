@@ -1,8 +1,7 @@
-﻿using System;
-using Xunit;
+﻿using Xunit;
 using CopaDeGames.Back.Domain.Entities;
 
-namespace CopaDeGames.Back.Tests.Domain.Entities
+namespace CopaDeGames.Back.Tests.UnitTests.Domain.Entities
 {
     public class PartidaTests
     {

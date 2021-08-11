@@ -10,10 +10,10 @@ namespace CopaDeGames.Back.Domain.Services
     public class CampeonatoService : ICampeonatoService
     {
         private readonly ICampeonatoRepository _campeonatoRepository;
-        private readonly IApiLambdaCompetidores _apiLambdaCompetidores;
+        private readonly IApiCompetidores _apiLambdaCompetidores;
 
 
-        public CampeonatoService(ICampeonatoRepository campeonatoRepository, IApiLambdaCompetidores apiLambdaCompetidores)
+        public CampeonatoService(ICampeonatoRepository campeonatoRepository, IApiCompetidores apiLambdaCompetidores)
         {
             _campeonatoRepository = campeonatoRepository;
             _apiLambdaCompetidores = apiLambdaCompetidores;
@@ -32,7 +32,7 @@ namespace CopaDeGames.Back.Domain.Services
             campeonato.IniciarCompeticao();
 
             // salva campeonato no banco
-            await _campeonatoRepository.Adicionar(new HistoricoCampeonato(campeonato.Id, campeonato.Campeao.Titulo, campeonato.Campeao.UrlImagem, campeonato.ViceCampeao.Titulo, campeonato.ViceCampeao.UrlImagem));
+            await _campeonatoRepository.Adicionar(new Competicao(campeonato.Id, campeonato.Campeao.Titulo, campeonato.Campeao.UrlImagem, campeonato.ViceCampeao.Titulo, campeonato.ViceCampeao.UrlImagem));
 
             return campeonato;
         }

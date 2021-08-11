@@ -2,18 +2,23 @@
 using Microsoft.EntityFrameworkCore;
 namespace CopaDeGames.Back.Domain.Repositories.Data
 {
-    public class DataContext : DbContext
+    public class CampeonatoDataContext : DbContext
     {
-        public DataContext(DbContextOptions<DataContext> options)
-            : base(options)
+        public CampeonatoDataContext()
         {
 
         }
+
+        public CampeonatoDataContext(DbContextOptions<CampeonatoDataContext> options)
+            : base(options)
+        {
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseInMemoryDatabase(databaseName: "CopaDeGames");
         }
 
-        public DbSet<HistoricoCampeonato> Campeonatos { get; set; }
+        public DbSet<Competicao> Competicoes { get; set; }
     }
 }

@@ -4,6 +4,9 @@ using System.Linq;
 
 namespace CopaDeGames.Back.Domain.Entities
 {
+    /// <summary>
+    /// classe realizado do campeonato. organiza as chaves, rodadas, partidas e competidores
+    /// </summary>
     public class Campeonato
     {
         public Guid Id { get; private set; }
@@ -35,8 +38,8 @@ namespace CopaDeGames.Back.Domain.Entities
                 if (partidas.Count == 1)
                 {
                     var ultimaPartida = partidas.FirstOrDefault();
-                    Campeao = new Vencedor(ultimaPartida.Vencedor.Titulo, ultimaPartida.Vencedor.UrlImagem);
-                    ViceCampeao = new Vencedor(ultimaPartida.Perdedor.Titulo, ultimaPartida.Perdedor.UrlImagem);
+                    Campeao = new Vencedor(ultimaPartida.Vencedor.Id, ultimaPartida.Vencedor.Titulo, ultimaPartida.Vencedor.UrlImagem);
+                    ViceCampeao = new Vencedor(ultimaPartida.Perdedor.Id, ultimaPartida.Perdedor.Titulo, ultimaPartida.Perdedor.UrlImagem);
                 }
             }
         }
@@ -69,14 +72,12 @@ namespace CopaDeGames.Back.Domain.Entities
         {
             var partidas = new List<Partida>();
             var skip = 0;
-
             while (competidoresClassificados.Count() != (partidas.Count * 2))
             {
                 var competidoresPartida = competidoresClassificados.Skip(skip).Take(2);
-                partidas.Add(new Partida(competidoresClassificados.FirstOrDefault(), competidoresPartida.LastOrDefault()));
+                partidas.Add(new Partida(competidoresPartida.FirstOrDefault(), competidoresPartida.LastOrDefault()));
                 skip += 2;
             }
-
             return partidas;
         }
     }

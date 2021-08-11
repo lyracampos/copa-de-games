@@ -38,9 +38,9 @@ namespace CopaDeGames.Back
             });
 
             services.AddTransient<ICampeonatoService, CampeonatoService>();
-            services.AddTransient<IApiLambdaCompetidores, ApiLambdaCompetidores>();
+            services.AddTransient<IApiCompetidores, ApiCompetidores>();
             services.AddTransient<ICampeonatoRepository, CampeonatoRepository>();
-            services.AddDbContext<DataContext>();
+            services.AddDbContext<CampeonatoDataContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

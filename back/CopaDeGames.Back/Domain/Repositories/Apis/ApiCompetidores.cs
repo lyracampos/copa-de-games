@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CopaDeGames.Back.Domain.Repositories.Apis
 {
-    public class ApiLambdaCompetidores : IApiLambdaCompetidores
+    public class ApiCompetidores : IApiCompetidores
     {
         public string UrlApi => "https://l3-processoseletivo.azurewebsites.net/api/Competidores?copa=games";
 

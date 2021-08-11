@@ -24,7 +24,7 @@ export class FaseSelecaoComponent implements OnInit {
 
   listarCompetidores(): void{
     this.competidoresService.list().subscribe(
-      resp => { this.competidores = resp; },
+      resp => { this.competidores = resp.sort((a,b) =>(a.titulo > b.titulo) ? 1: -1); },
       error => { console.log(error); });
   }
 
@@ -45,7 +45,7 @@ export class FaseSelecaoComponent implements OnInit {
     this.router.navigate(['/resultado-final']);
 
     this.campeonatoService.iniciarCampeonato(this.classificados).subscribe(
-      resp => { this.router.navigate(['/resultado-final', resp.id]); },
+      resp => { this.router.navigate(['/resultado-final', resp.id]); console.log(this.classificados); },
       error => { console.log(error); });
   }
 }

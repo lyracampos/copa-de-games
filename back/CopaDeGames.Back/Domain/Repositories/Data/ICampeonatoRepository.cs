@@ -7,10 +7,10 @@ namespace CopaDeGames.Back.Domain.Repositories.Data
 {
     public interface ICampeonatoRepository
     {
-        Task Adicionar(HistoricoCampeonato campeonato);
+        Task Adicionar(Competicao campeonato);
 
-        Task<HistoricoCampeonato> Buscar(Guid id);
+        Task<Competicao> Buscar(Guid id);
 
-        Task<IEnumerable<HistoricoCampeonato>> Listar();
+        Task<IEnumerable<Competicao>> Listar();
     }
 }

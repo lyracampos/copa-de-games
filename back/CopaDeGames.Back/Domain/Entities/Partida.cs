@@ -5,6 +5,11 @@ namespace CopaDeGames.Back.Domain.Entities
 {
     public class Partida
     {
+        /// <summary>
+        /// classe para realizar uma disputa entre dois competidores
+        /// </summary>
+        /// <param name="competidor1"></param>
+        /// <param name="competidor2"></param>
         public Partida(Competidor competidor1, Competidor competidor2)
         {
             Competidor1 = competidor1;

@@ -2,17 +2,17 @@
 
 namespace CopaDeGames.Back.Domain.Entities
 {
-    public class HistoricoCampeonato
+    public class Competicao
     {
-        public HistoricoCampeonato()
+        public Competicao()
         {
 
         }
-        public HistoricoCampeonato(Guid id, string campeao, string campeaoUrl, string viceCampeao, string viceCampeaoUrl)
+        public Competicao(Guid id, string campeao, string campeaoUrl, string viceCampeao, string viceCampeaoUrl)
         {
             Id = id;
             Campeao = campeao;
-            CampeaoImg = campeaoUrl; 
+            CampeaoImg = campeaoUrl;
             ViceCampeao = viceCampeao;
             ViceCampeaoImg = viceCampeaoUrl;
             DataCompeticao = DateTime.UtcNow;

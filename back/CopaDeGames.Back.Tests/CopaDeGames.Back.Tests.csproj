@@ -18,24 +18,28 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="5.0.8" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="Domain\" />
-    <None Remove="Domain\Entities\" />
-    <None Remove="Mocks\" />
     <None Remove="Newtonsoft.Json" />
+    <None Remove="IntegratedTests\" />
+    <None Remove="Microsoft.AspNetCore.Mvc.Testing" />
+    <None Remove="UnitTests\" />
+    <None Remove="UnitTests\Mocks\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Domain\" />
-    <Folder Include="Domain\Entities\" />
-    <Folder Include="Mocks\" />
+    <Folder Include="UnitTests\Domain\" />
+    <Folder Include="IntegratedTests\" />
+    <Folder Include="UnitTests\" />
+    <Folder Include="UnitTests\Mocks\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CopaDeGames.Back\CopaDeGames.Back.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <None Update="Mocks\competidores.json">
+    <None Update="UnitTests\Mocks\competidores.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

@@ -9,18 +9,18 @@ namespace CopaDeGames.Back.Domain.Repositories.Data
 {
     public class CampeonatoRepository : ICampeonatoRepository
     {
-        private readonly DataContext _context;
+        private readonly CampeonatoDataContext _context;
 
-        public CampeonatoRepository(DataContext context)
+        public CampeonatoRepository(CampeonatoDataContext context)
         {
             _context = context;
         }
 
-        public async Task Adicionar(HistoricoCampeonato campeonato)
+        public async Task Adicionar(Competicao campeonato)
         {
             try
             {
-                await _context.Campeonatos.AddAsync(campeonato);
+                await _context.Competicoes.AddAsync(campeonato);
                 await _context.SaveChangesAsync();
             }
             catch (Exception ex)
@@ -29,8 +29,8 @@ namespace CopaDeGames.Back.Domain.Repositories.Data
             }
         }
 
-        public async Task<HistoricoCampeonato> Buscar(Guid id) => await _context.Campeonatos.FindAsync(id);
+        public async Task<Competicao> Buscar(Guid id) => await _context.Competicoes.FindAsync(id);
 
-        public async Task<IEnumerable<HistoricoCampeonato>> Listar() => await _context.Campeonatos.OrderBy(p => p.DataCompeticao).ToArrayAsync();
+        public async Task<IEnumerable<Competicao>> Listar() => await _context.Competicoes.OrderBy(p => p.DataCompeticao).ToArrayAsync();
     }
 }

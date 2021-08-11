@@ -390,4 +390,6 @@ FodyWeavers.xsd
 # End of https://www.toptal.com/developers/gitignore/api/visualstudio
 
 .DS_Store
-/BackendChallenge.Pedidos.Tests/coverage.cobertura.xml
+
+.node_modules/*
+.dist/*
